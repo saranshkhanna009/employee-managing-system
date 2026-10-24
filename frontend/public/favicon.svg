@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Employee Tracker</title>
+  <rect width="64" height="64" rx="14" fill="#1a1a2e"/>
+  <path d="M20 24a12 12 0 1 1 24 0v4H20z" fill="#60a5fa"/>
+  <circle cx="32" cy="23" r="7" fill="#e0f2fe"/>
+  <path d="M14 51c1.8-9 8.1-14 18-14s16.2 5 18 14" fill="#e0f2fe"/>
+  <path d="M14 51h36" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+</svg>
