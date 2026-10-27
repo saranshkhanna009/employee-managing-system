@@ -13,7 +13,7 @@ import {
 import { Link } from 'react-router-dom';
 import { apiClient } from '../utils/api';
 import { useQuery } from '@tanstack/react-query';
-import { DepartmentDailySummary, LeaveRequest, Task, TaskSummary } from '../types';
+import { DepartmentDailySummary, LeaveBalanceResponse, LeaveRequest, Task, TaskSummary } from '../types';
 
 export function DashboardPage() {
   const { user, hasRole } = useAuthStore();
@@ -32,7 +32,7 @@ export function DashboardPage() {
           : Promise.resolve({ data: null }),
       ]);
       const taskItems: TaskSummary[] = tasksRes.data;
-      const leaveBalance = leavesRes.data;
+      const leaveBalance: LeaveBalanceResponse = leavesRes.data;
       const leaveRequests: LeaveRequest[] = (await apiClient.getLeaves({ page_size: 100 })).data.items;
       return {
         myTasks: {
