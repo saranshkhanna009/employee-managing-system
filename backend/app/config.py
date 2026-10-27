@@ -1,5 +1,6 @@
 """Application configuration using Pydantic Settings."""
 
+import base64
 import secrets
 from functools import lru_cache
 from typing import List, Optional
@@ -133,7 +134,6 @@ class Settings(BaseSettings):
     def validate_encryption_key(cls, v: str) -> str:
         if not v:
             # Generate a warning key for development only
-            import base64
             return base64.b64encode(secrets.token_bytes(32)).decode()
         # Validate it's valid base64 and 32 bytes
         try:
@@ -148,7 +148,6 @@ class Settings(BaseSettings):
     @classmethod
     def validate_secret_key(cls, v: str) -> str:
         if not v:
-            import base64
             return base64.b64encode(secrets.token_bytes(32)).decode()
         try:
             decoded = base64.b64decode(v)
